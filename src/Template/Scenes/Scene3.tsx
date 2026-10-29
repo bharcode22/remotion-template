@@ -1,57 +1,37 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, useCurrentFrame } from "remotion";
 import { ArrowRight, CheckCircle, Database, GitBranch, Layers, ShieldCheck } from "lucide-react";
 import { SceneContainer } from "../Components/SceneContainer";
 import { TECH_COLORS } from "../constants";
 
 /**
  * ========================================================
- * TEMPLATE SCENE 3: PIPELINE & DATA STREAM SUB-SCENE
+ * TEMPLATE SCENE 3: PIPELINE & DATA STREAM (TANPA POPUP)
  * ========================================================
- * Menggabungkan konsep visual dinamis dari Portfolio & DontTestMe:
- * - SVG Animated Pipeline Line (stroke-dashoffset draw inspired by Station2Timeline)
- * - Laser Data Packet yang meluncur di sepanjang jalur pipa
- * - 3 Milestone Nodes dengan staggered spring pop-in
- * - Sub-Scene 3.1: Live packet stream inspector
+ * - Posisi stabil dan solid saat kamera meluncur ke kanan (X: 1400)
+ * - Tanpa animasi pop-up pada entrance
+ * - Jalur SVG pipeline menggambar secara dinamis dengan paket data laser bergerak
  * - Konten placeholder: Lorem Ipsum profesional
  */
 export const Scene3: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
 
-  // Active frame offset for Scene 3 (Global frames 200 - 270)
-  const relFrame = Math.max(0, frame - 200);
+  // Active frame offset for Scene 3 (Global frames 195 - 255)
+  const relFrame = Math.max(0, frame - 195);
 
-  // 1. Entrance spring
-  const sEntrance = spring({ frame: relFrame - 2, fps, config: { damping: 13, mass: 0.5, stiffness: 110 } });
-
-  // 2. Animated SVG Pipeline Line Drawing (0 -> 1 progress)
+  // 1. Animated SVG Pipeline Line Drawing (0 -> 1 progress)
   const lineProgress = interpolate(relFrame, [10, 48], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
   const strokeDashoffset = interpolate(lineProgress, [0, 1], [580, 0]);
 
-  // 3. Staggered Milestone Springs
-  const sNode1 = spring({ frame: relFrame - 12, fps, config: { damping: 12, mass: 0.4 } });
-  const sNode2 = spring({ frame: relFrame - 28, fps, config: { damping: 12, mass: 0.4 } });
-  const sNode3 = spring({ frame: relFrame - 44, fps, config: { damping: 12, mass: 0.4 } });
-
-  // 4. Moving Laser Packet Position along the pipeline (X: 120 -> 720)
+  // 2. Moving Laser Packet Position along the pipeline (X: 110 -> 730)
   const packetX = interpolate(lineProgress, [0, 1], [110, 730]);
   const packetGlowOpacity = lineProgress > 0.05 && lineProgress < 0.98 ? 1 : 0.2;
 
-  // 5. Sub-Scene 3.1 Inspector Card Entrance (relFrame >= 35)
-  const sSub = spring({ frame: relFrame - 35, fps, config: { damping: 13, mass: 0.45, stiffness: 110 } });
-
   return (
-    <div
-      style={{
-        transform: `scale(${sEntrance})`,
-        opacity: sEntrance,
-        width: "100%",
-      }}
-    >
+    <div style={{ width: "100%" }}>
       <SceneContainer
         sceneNumber="03"
         tag="LOREM // PIPELINE & STREAM"
@@ -127,7 +107,7 @@ export const Scene3: React.FC = () => {
               </svg>
             </div>
 
-            {/* 3 Milestone Node Badges */}
+            {/* 3 Milestone Node Badges (Solid layout, no popup) */}
             <div
               style={{
                 display: "grid",
@@ -138,8 +118,6 @@ export const Scene3: React.FC = () => {
               {/* Node 1 */}
               <div
                 style={{
-                  transform: `scale(${sNode1})`,
-                  opacity: sNode1,
                   backgroundColor: "rgba(139, 92, 246, 0.08)",
                   border: "1px solid rgba(139, 92, 246, 0.3)",
                   borderRadius: 16,
@@ -160,8 +138,6 @@ export const Scene3: React.FC = () => {
               {/* Node 2 */}
               <div
                 style={{
-                  transform: `scale(${sNode2})`,
-                  opacity: sNode2,
                   backgroundColor: lineProgress >= 0.5 ? "rgba(139, 92, 246, 0.15)" : "rgba(255, 255, 255, 0.04)",
                   border: lineProgress >= 0.5 ? "1px solid #8b5cf6" : "1px solid rgba(255, 255, 255, 0.1)",
                   borderRadius: 16,
@@ -184,8 +160,6 @@ export const Scene3: React.FC = () => {
               {/* Node 3 */}
               <div
                 style={{
-                  transform: `scale(${sNode3})`,
-                  opacity: sNode3,
                   backgroundColor: lineProgress >= 0.9 ? "rgba(16, 185, 129, 0.12)" : "rgba(255, 255, 255, 0.04)",
                   border: lineProgress >= 0.9 ? "1px solid #10b981" : "1px solid rgba(255, 255, 255, 0.1)",
                   borderRadius: 16,
@@ -207,7 +181,7 @@ export const Scene3: React.FC = () => {
             </div>
           </div>
 
-          {/* Sub-Scene 3.1 Live Data Telemetry Bottom Bar */}
+          {/* Sub-Scene 3.1 Live Data Telemetry Bottom Bar (Solid layout, no popup) */}
           <div
             style={{
               backgroundColor: "rgba(139, 92, 246, 0.08)",
@@ -217,7 +191,6 @@ export const Scene3: React.FC = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              transform: `scale(${interpolate(sSub, [0, 1], [0.96, 1])})`,
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>

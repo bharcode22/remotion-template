@@ -1,46 +1,28 @@
 import React from "react";
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame } from "remotion";
 import { Award, CheckCircle2, Flame, Layers, Sparkles } from "lucide-react";
 import { SceneContainer } from "../Components/SceneContainer";
 import { TECH_COLORS } from "../constants";
 
 /**
  * ========================================================
- * TEMPLATE SCENE 4: CLIMAX SUMMARY & CALL-TO-ACTION
+ * TEMPLATE SCENE 4: CLIMAX SUMMARY & OUTRO (TANPA POPUP)
  * ========================================================
- * Menggabungkan konsep visual dinamis dari Portfolio & DontTestMe:
- * - Camera pull-back macro view transition
- * - Dual comparative Bento Grid dengan staggered entrance
- * - Breathing celebratory pill badge (sine scale & glowing aura)
- * - Animated rotating border shimmer
+ * - Posisi stabil dan solid saat kamera meluncur ke kanan (X: 2800)
+ * - Tanpa animasi pop-up pada entrance
+ * - Symmetrical Bento Grid komparatif yang kokoh
+ * - Breathing celebratory pill badge & makro pull-back view
  * - Konten placeholder: Lorem Ipsum profesional
  */
 export const Scene4: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
 
-  // Active frame offset for Scene 4 (Global frames 280 - 300)
-  const relFrame = Math.max(0, frame - 280);
-
-  // 1. Entrance spring
-  const sEntrance = spring({ frame: relFrame - 1, fps, config: { damping: 12, mass: 0.45, stiffness: 120 } });
-
-  // 2. Dual Column Staggered Springs
-  const sCol1 = spring({ frame: relFrame - 4, fps, config: { damping: 13, mass: 0.45 } });
-  const sCol2 = spring({ frame: relFrame - 8, fps, config: { damping: 13, mass: 0.45 } });
-
-  // 3. CTA Breathing Pulse
+  // 1. CTA Breathing Pulse (Ambient levitation, bukan pop-up entrance)
   const pulseScale = 1 + Math.sin(frame * 0.25) * 0.04;
   const pulseGlow = 0.4 + Math.sin(frame * 0.25) * 0.15;
 
   return (
-    <div
-      style={{
-        transform: `scale(${sEntrance})`,
-        opacity: sEntrance,
-        width: "100%",
-      }}
-    >
+    <div style={{ width: "100%" }}>
       <SceneContainer
         sceneNumber="04"
         tag="LOREM // FINAL SUMMARY"
@@ -58,7 +40,7 @@ export const Scene4: React.FC = () => {
             width: "100%",
           }}
         >
-          {/* Symmetrical Dual Bento Columns */}
+          {/* Symmetrical Dual Bento Columns (Solid layout, no popup) */}
           <div
             style={{
               display: "grid",
@@ -69,8 +51,6 @@ export const Scene4: React.FC = () => {
             {/* Left Bento: Primary Takeaways */}
             <div
               style={{
-                transform: `scale(${sCol1})`,
-                opacity: sCol1,
                 backgroundColor: "rgba(245, 158, 11, 0.08)",
                 border: "1.5px solid rgba(245, 158, 11, 0.35)",
                 borderRadius: 20,
@@ -101,8 +81,6 @@ export const Scene4: React.FC = () => {
             {/* Right Bento: Secondary Takeaways */}
             <div
               style={{
-                transform: `scale(${sCol2})`,
-                opacity: sCol2,
                 backgroundColor: "rgba(6, 182, 212, 0.08)",
                 border: "1.5px solid rgba(6, 182, 212, 0.35)",
                 borderRadius: 20,

@@ -15,10 +15,13 @@ export const DepthOfFieldWrapper: React.FC<DepthOfFieldWrapperProps> = ({
   camera,
   children,
 }) => {
-  const distance = Math.abs(camera.y - stationY);
+  // Euclidean 2D distance (supports both vertical descent and horizontal lateral slides)
+  const dx = camera.x - stationX;
+  const dy = camera.y - stationY;
+  const distance = Math.hypot(dx, dy);
 
-  // If too far away, hide completely to boost rendering performance
-  if (distance > 1100) {
+  // If too far away from camera focus center, unmount to save GPU resources
+  if (distance > 1350) {
     return null;
   }
 

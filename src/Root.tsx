@@ -4,7 +4,7 @@ import { Template } from "./Template";
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* 4. Composition: Infinite Camera Template (Reusable Apple-Style Rig) */}
+      {/* Composition: Hybrid Kinetic Journey Template (Varied Transitions: Dengan Garis & Tanpa Garis) */}
       <Composition
         id="Template"
         component={Template}

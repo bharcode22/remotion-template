@@ -19,32 +19,22 @@ export const Scene2: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Active frame offset for Scene 2 (Global frames 100 - 180)
-  const relFrame = Math.max(0, frame - 100);
+  // Active frame offset for Scene 2 (Global frames 95 - 180)
+  const relFrame = Math.max(0, frame - 95);
 
-  // 1. Optical punch-in entrance spring
-  const sEntrance = spring({ frame: relFrame - 2, fps, config: { damping: 12, mass: 0.45, stiffness: 120 } });
-  const zoomSnap = interpolate(sEntrance, [0, 1], [1.18, 1.0]);
-
-  // 2. Sub-Scene 2.1 Trigger (Global Frame 135+, relFrame >= 35)
+  // 1. Sub-Scene 2.1 Trigger (Global Frame 135+, relFrame >= 35)
   const isSubScene = relFrame >= 35;
   const sSub = spring({ frame: relFrame - 35, fps, config: { damping: 13, mass: 0.5, stiffness: 110 } });
 
-  // 3. Dynamic Rotation for Orbital Radar
+  // 2. Dynamic Rotation for Orbital Radar
   const radarSpin = (frame * 2.2) % 360;
 
-  // 4. Live Telemetry Interpolations
+  // 3. Live Telemetry Interpolations
   const throughput = Math.round(interpolate(relFrame, [10, 60], [140, 890], { extrapolateRight: "clamp" }));
   const latency = (interpolate(relFrame, [10, 60], [42, 8.4], { extrapolateRight: "clamp" })).toFixed(1);
 
   return (
-    <div
-      style={{
-        transform: `scale(${sEntrance * zoomSnap})`,
-        opacity: sEntrance,
-        width: "100%",
-      }}
-    >
+    <div style={{ width: "100%" }}>
       <SceneContainer
         sceneNumber="02"
         tag="LOREM // CORE ARCHITECTURE"

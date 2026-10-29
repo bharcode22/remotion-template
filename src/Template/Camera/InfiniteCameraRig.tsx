@@ -22,7 +22,7 @@ export const InfiniteCameraRig: React.FC<InfiniteCameraRigProps> = ({
         pointerEvents: "none",
       }}
     >
-      {/* Symmetrical World Space Canvas (Pure Vertical Axis & Zoom) */}
+      {/* Symmetrical World Space Canvas (2D Spatial Lateral & Vertical Momentum) */}
       <div
         style={{
           position: "absolute",
@@ -31,7 +31,7 @@ export const InfiniteCameraRig: React.FC<InfiniteCameraRigProps> = ({
           width: 1080,
           height: 1920,
           transformOrigin: "540px 960px",
-          transform: `scale(${camera.zoom}) translate3d(0px, ${-camera.y}px, 0px)`,
+          transform: `scale(${camera.zoom}) translate3d(${-camera.x}px, ${-camera.y}px, 0px)`,
           willChange: "transform",
         }}
       >
