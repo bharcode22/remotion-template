@@ -1,4 +1,4 @@
-export const TOTAL_VIDEO_FRAMES = 1320; // 44.0s @ 30fps
+export const TOTAL_VIDEO_FRAMES = 1800; // Exactly 60.0s @ 30fps
 
 export interface DemoStation {
   id: string;
@@ -30,7 +30,7 @@ export const DEMO_STATIONS: DemoStation[] = [
     tilt: 0,
     accentColor: "#10b981", // Emerald
     startFrame: 0,
-    endFrame: 90,
+    endFrame: 120,
   },
   {
     id: "scene-02",
@@ -44,8 +44,8 @@ export const DEMO_STATIONS: DemoStation[] = [
     zoom: 1.0,
     tilt: 0,
     accentColor: "#06b6d4", // Cyan
-    startFrame: 120,
-    endFrame: 210,
+    startFrame: 150,
+    endFrame: 300,
   },
   {
     id: "scene-03",
@@ -59,8 +59,8 @@ export const DEMO_STATIONS: DemoStation[] = [
     zoom: 1.0,
     tilt: 0,
     accentColor: "#3b82f6", // Blue
-    startFrame: 240,
-    endFrame: 320,
+    startFrame: 330,
+    endFrame: 480,
   },
   {
     id: "scene-04",
@@ -74,8 +74,8 @@ export const DEMO_STATIONS: DemoStation[] = [
     zoom: 1.0,
     tilt: 0,
     accentColor: "#6366f1", // Indigo
-    startFrame: 350,
-    endFrame: 440,
+    startFrame: 510,
+    endFrame: 690,
   },
   {
     id: "scene-05",
@@ -89,8 +89,8 @@ export const DEMO_STATIONS: DemoStation[] = [
     zoom: 1.0,
     tilt: 0,
     accentColor: "#8b5cf6", // Purple
-    startFrame: 470,
-    endFrame: 640,
+    startFrame: 720,
+    endFrame: 960,
   },
   {
     id: "scene-06",
@@ -104,8 +104,8 @@ export const DEMO_STATIONS: DemoStation[] = [
     zoom: 1.0,
     tilt: 0,
     accentColor: "#ec4899", // Pink
-    startFrame: 670,
-    endFrame: 760,
+    startFrame: 990,
+    endFrame: 1140,
   },
   {
     id: "scene-07",
@@ -119,8 +119,8 @@ export const DEMO_STATIONS: DemoStation[] = [
     zoom: 1.0,
     tilt: 0,
     accentColor: "#f43f5e", // Rose
-    startFrame: 790,
-    endFrame: 960,
+    startFrame: 1170,
+    endFrame: 1410,
   },
   {
     id: "scene-08",
@@ -134,8 +134,8 @@ export const DEMO_STATIONS: DemoStation[] = [
     zoom: 0.95,
     tilt: 0,
     accentColor: "#f59e0b", // Amber
-    startFrame: 990,
-    endFrame: 1320,
+    startFrame: 1440,
+    endFrame: 1800,
   },
 ];
 

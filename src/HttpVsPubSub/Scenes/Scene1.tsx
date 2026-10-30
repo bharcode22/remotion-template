@@ -37,13 +37,13 @@ export const Scene1: React.FC = () => {
   const questionPulse = 1 + Math.sin(frame * 0.25) * 0.08;
   const questionGlow = 0.5 + Math.sin(frame * 0.25) * 0.35;
 
-  const isTargetDetected = frame >= 40;
+  const isTargetDetected = frame >= 50;
 
   // ─────────────────────────────────────────────────────────────────────────────
   // 2. TIGA GARIS LURUS PARALEL (GROWTH & PACKET GLIDE)
   // ─────────────────────────────────────────────────────────────────────────────
-  // Pertumbuhan 3 garis lurus dari Client (frame 8 s/d 38)
-  const lineGrowProgress = interpolate(frame, [8, 38], [0, 1], {
+  // Pertumbuhan 3 garis lurus dari Client (frame 10 s/d 48)
+  const lineGrowProgress = interpolate(frame, [10, 48], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });

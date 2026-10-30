@@ -30,8 +30,8 @@ export const Scene2: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Offset relatif Scene 2 (Global frame 120 - 210, durasi 90 frame)
-  const relFrame = Math.max(0, frame - 120);
+  // Offset relatif Scene 2 (Global frame 150 - 300, durasi 150 frame)
+  const relFrame = Math.max(0, frame - 150);
 
   // ─────────────────────────────────────────────────────────────────────────────
   // 1. STAGGERED CASCADING ENTRANCE SPRINGS
@@ -58,8 +58,8 @@ export const Scene2: React.FC = () => {
   // ─────────────────────────────────────────────────────────────────────────────
   // 2. SINKRONISASI FASE SOROTAN NARASI (VOICEOVER)
   // ─────────────────────────────────────────────────────────────────────────────
-  const isHttpFocus = relFrame >= 30 && relFrame < 60;
-  const isPubSubFocus = relFrame >= 60;
+  const isHttpFocus = relFrame >= 15 && relFrame < 75;
+  const isPubSubFocus = relFrame >= 75;
 
   const httpBorderColor = isHttpFocus ? "#06b6d4" : "rgba(6, 182, 212, 0.4)";
   const httpGlow = isHttpFocus ? "0 0 35px rgba(6, 182, 212, 0.45)" : "0 10px 30px rgba(0, 0, 0, 0.5)";
@@ -70,31 +70,31 @@ export const Scene2: React.FC = () => {
   // ─────────────────────────────────────────────────────────────────────────────
   // 3. SIMULASI NYATA HTTP (KLIK PESAN KOPI ➔ REQUEST ➔ RESPONSE 200 OK)
   // ─────────────────────────────────────────────────────────────────────────────
-  // Tombol "Pesan Kopi" tertekan di relFrame 20..26
-  const isBtnPressed = relFrame >= 20 && relFrame <= 26;
+  // Tombol "Pesan Kopi" tertekan di relFrame 20..28
+  const isBtnPressed = relFrame >= 20 && relFrame <= 28;
   const btnScale = isBtnPressed ? 0.92 : 1.0;
 
-  // Paket Request meluncur dari Phone (kiri) ke Server (kanan): relFrame 22..42
-  const reqProgress = interpolate(relFrame, [22, 42], [0, 1], {
+  // Paket Request meluncur dari Phone (kiri) ke Server (kanan): relFrame 24..48
+  const reqProgress = interpolate(relFrame, [24, 48], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
   const reqX = interpolate(reqProgress, [0, 1], [35, 145]);
   const reqOpacity = reqProgress > 0 && reqProgress < 1 ? 1 : 0;
 
-  // Server LED berkedip saat memproses: relFrame 40..50
-  const serverProcessing = relFrame >= 40 && relFrame <= 50;
+  // Server LED berkedip saat memproses: relFrame 46..58
+  const serverProcessing = relFrame >= 46 && relFrame <= 58;
 
-  // Paket Response meluncur dari Server (kanan) ke Phone (kiri): relFrame 48..68
-  const resProgress = interpolate(relFrame, [48, 68], [0, 1], {
+  // Paket Response meluncur dari Server (kanan) ke Phone (kiri): relFrame 56..74
+  const resProgress = interpolate(relFrame, [56, 74], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
   const resX = interpolate(resProgress, [0, 1], [145, 35]);
   const resOpacity = resProgress > 0 && resProgress < 1 ? 1 : 0;
 
-  // Pop-up Struk Sukses muncul di smartphone setelah Response tiba (relFrame >= 66)
-  const isHttpSuccess = relFrame >= 66;
+  // Pop-up Struk Sukses muncul di smartphone setelah Response tiba (relFrame >= 72)
+  const isHttpSuccess = relFrame >= 72;
 
   // ─────────────────────────────────────────────────────────────────────────────
   // 4. SIMULASI NYATA PUB/SUB (MENARA EVENT MEMANCARKAN KE 3 SMARTPHONE)
@@ -108,8 +108,8 @@ export const Scene2: React.FC = () => {
   const waveScale2 = 1 + waveCycle2 * 1.8;
   const waveOpacity2 = interpolate(waveCycle2, [0, 0.7, 1], [0.8, 0.3, 0]);
 
-  // Notifikasi muncul serentak di ketiga smartphone penerima (relFrame >= 45)
-  const isNotifRinging = relFrame >= 45;
+  // Notifikasi muncul serentak di ketiga smartphone penerima (relFrame >= 85)
+  const isNotifRinging = relFrame >= 85;
   const notifBellShake = isNotifRinging ? Math.sin(relFrame * 0.8) * 8 : 0;
 
   // Dynamic HUD Status Text
