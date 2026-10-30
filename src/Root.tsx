@@ -8,6 +8,10 @@ import {
   AtasanDikitDikitAI,
   TOTAL_VIDEO_FRAMES as ATASAN_AI_FRAMES,
 } from "./AtasanDikitDikitAI";
+import {
+  RestApi,
+  TOTAL_VIDEO_FRAMES as REST_API_FRAMES,
+} from "./RestApi";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -32,7 +36,7 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
       />
 
-      {/* 3. Proyek Baru: Atasan Dikit-Dikit Pake AI (Naskah 2) */}
+      {/* 3. Proyek: Atasan Dikit-Dikit Pake AI (Naskah 2) */}
       <Composition
         id="AtasanDikitDikitAI"
         component={AtasanDikitDikitAI}
@@ -43,6 +47,21 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           enableSfx: true,
           enableVoiceover: false,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 4. Proyek Baru: REST API (Naskah 3) */}
+      <Composition
+        id="RestApi"
+        component={RestApi}
+        durationInFrames={REST_API_FRAMES} // Exactly 43.0 seconds @ 30fps (1290 frames)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
           sfxVolume: 1.0,
         }}
       />
