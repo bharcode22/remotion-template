@@ -34,6 +34,11 @@
     "lint": "eslint src && tsc",
     "render": "npx remotion render PortfolioReels out/portfolio_reels_1080p.mp4 --pixel-format=yuv420p",
     "render:4k": "npx remotion render PortfolioReels out/portfolio_reels_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:template": "npx remotion render Template out/Template.mp4 --pixel-format=yuv420p",
+    "render:http-vs-pubsub": "npx remotion render HttpVsPubSub out/HttpVsPubSub.mp4 --pixel-format=yuv420p",
+    "render:http-vs-pubsub:4k": "npx remotion render HttpVsPubSub out/HttpVsPubSub_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:atasan-ai": "npx remotion render AtasanDikitDikitAI out/AtasanDikitDikitAI.mp4 --pixel-format=yuv420p",
+    "render:atasan-ai:4k": "npx remotion render AtasanDikitDikitAI out/AtasanDikitDikitAI_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
   },

@@ -4,6 +4,10 @@ import {
   HttpVsPubSub,
   TOTAL_VIDEO_FRAMES as HTTP_VS_PUBSUB_FRAMES,
 } from "./HttpVsPubSub";
+import {
+  AtasanDikitDikitAI,
+  TOTAL_VIDEO_FRAMES as ATASAN_AI_FRAMES,
+} from "./AtasanDikitDikitAI";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -18,7 +22,7 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
       />
 
-      {/* 2. Proyek Baru: HTTP vs Pub/Sub (Cara Aplikasi Berkomunikasi) */}
+      {/* 2. Proyek: HTTP vs Pub/Sub (Cara Aplikasi Berkomunikasi) */}
       <Composition
         id="HttpVsPubSub"
         component={HttpVsPubSub}
@@ -26,6 +30,21 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
+      />
+
+      {/* 3. Proyek Baru: Atasan Dikit-Dikit Pake AI (Naskah 2) */}
+      <Composition
+        id="AtasanDikitDikitAI"
+        component={AtasanDikitDikitAI}
+        durationInFrames={ATASAN_AI_FRAMES} // Exactly 43.32 seconds @ 30fps (1300 frames)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableSfx: true,
+          enableVoiceover: false,
+          sfxVolume: 1.0,
+        }}
       />
     </>
   );
