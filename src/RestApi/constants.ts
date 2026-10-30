@@ -1,8 +1,8 @@
 import { DemoStation } from "./types";
 
-// Total durasi video sesuai public/rest-api.wav: 43.0s @ 30fps = 1290 frames
-export const TOTAL_VIDEO_FRAMES = 1290;
-export const TOTAL_AUDIO_FRAMES = 1290;
+// Total durasi video terkalibrasi revisi frame 1151: 46.0s @ 30fps = 1380 frames
+export const TOTAL_VIDEO_FRAMES = 1380;
+export const TOTAL_AUDIO_FRAMES = 1380;
 
 export const REST_COLORS = {
   bgDark: "#030712", // Deep cosmic cyber obsidian
@@ -110,7 +110,7 @@ export const REST_STATIONS: DemoStation[] = [
     zoom: 1.0,
     accentColor: "#ef4444",
     startFrame: 1105,
-    endFrame: 1290,
+    endFrame: 1380,
   },
 ];
 

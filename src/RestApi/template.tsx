@@ -98,10 +98,10 @@ export const RestApi: React.FC<RestApiProps> = ({
       {/* 1. Dynamic Background Space */}
       {renderBackground()}
 
-      {/* 2. Audio Voiceover (rest-api.wav: 43.0s / 1290 frames) */}
+      {/* 2. Audio Voiceover (rest-api-combined.wav: 45.2s / 1356 frames) */}
       {enableVoiceover && (
         <Audio
-          src={staticFile("rest-api.wav")}
+          src={staticFile("rest-api-combined.wav")}
           volume={1.0}
         />
       )}
@@ -146,7 +146,7 @@ export const RestApi: React.FC<RestApiProps> = ({
         </AbsoluteFill>
       )}
 
-      {/* 9. Scene 6 View: Final Climax & Non-Compliant Verdict (1100 - 1290f) */}
+      {/* 9. Scene 6 View: Final Climax & Non-Compliant Verdict (1100 - 1380f) */}
       {showScene6 && (
         <AbsoluteFill>
           <Scene6 />

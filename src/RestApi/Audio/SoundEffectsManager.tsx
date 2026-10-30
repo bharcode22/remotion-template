@@ -266,7 +266,7 @@ export const SoundEffectsManager: React.FC<SoundEffectsManagerProps> = ({
       </Sequence>
 
       {/* ───────────────────────────────────────────────────────────
-          SCENE 6 CLIMAX & VERDICT SFX (1100 - 1290f)
+          SCENE 6 CLIMAX & VERDICT SFX (1100 - 1380f)
           ─────────────────────────────────────────────────────────── */}
       {/* 28. Focus snap shutter when Scene 6 terminal lands at Frame 1102 */}
       <Sequence from={1102} durationInFrames={20}>
@@ -276,7 +276,7 @@ export const SoundEffectsManager: React.FC<SoundEffectsManagerProps> = ({
         />
       </Sequence>
 
-      {/* 29. Typing clicks for Line 22 (Frames 1110 - 1145) */}
+      {/* 29. Typing clicks for Line 1: Server tetap memberikan data (Frames 1105 - 1150) */}
       <Sequence from={1112} durationInFrames={15}>
         <Audio
           src={staticFile("sound_fx/03_digital_counter_click.wav")}
@@ -290,44 +290,58 @@ export const SoundEffectsManager: React.FC<SoundEffectsManagerProps> = ({
         />
       </Sequence>
 
-      {/* 30. Typing clicks for Line 23 (Frames 1168 - 1205) */}
+      {/* 30. Typing clicks for Line 2: Namun implementasi tersebut (Frames 1159 - 1213) */}
       <Sequence from={1170} durationInFrames={15}>
         <Audio
           src={staticFile("sound_fx/03_digital_counter_click.wav")}
           volume={0.5 * volume}
         />
       </Sequence>
-      <Sequence from={1192} durationInFrames={15}>
+      <Sequence from={1195} durationInFrames={15}>
         <Audio
           src={staticFile("sound_fx/03_digital_counter_click.wav")}
           volume={0.5 * volume}
         />
       </Sequence>
 
-      {/* 31. Glitch Stamp Impact when 'BUKAN REST API' slams down at Frame 1205 */}
-      <Sequence from={1205} durationInFrames={35}>
+      {/* 31. Typing clicks for Line 3: tidak mengikuti semantik... (Frames 1218 - 1310) */}
+      <Sequence from={1230} durationInFrames={15}>
+        <Audio
+          src={staticFile("sound_fx/03_digital_counter_click.wav")}
+          volume={0.5 * volume}
+        />
+      </Sequence>
+      <Sequence from={1260} durationInFrames={15}>
+        <Audio
+          src={staticFile("sound_fx/03_digital_counter_click.wav")}
+          volume={0.5 * volume}
+        />
+      </Sequence>
+      <Sequence from={1290} durationInFrames={15}>
+        <Audio
+          src={staticFile("sound_fx/03_digital_counter_click.wav")}
+          volume={0.5 * volume}
+        />
+      </Sequence>
+
+      {/* 32. Typing click for Line 4: dalam REST API (Frame 1318) */}
+      <Sequence from={1318} durationInFrames={15}>
+        <Audio
+          src={staticFile("sound_fx/03_digital_counter_click.wav")}
+          volume={0.5 * volume}
+        />
+      </Sequence>
+
+      {/* 33. Glitch Stamp Impact when 'BUKAN REST API' slams down at Frame 1322 */}
+      <Sequence from={1322} durationInFrames={35}>
         <Audio
           src={staticFile("sound_fx/09_stamp_impact_glitch.wav")}
           volume={0.85 * volume}
         />
       </Sequence>
 
-      {/* 32. Typing clicks for Line 24 (Frames 1242 - 1272) */}
-      <Sequence from={1244} durationInFrames={15}>
-        <Audio
-          src={staticFile("sound_fx/03_digital_counter_click.wav")}
-          volume={0.5 * volume}
-        />
-      </Sequence>
-      <Sequence from={1262} durationInFrames={15}>
-        <Audio
-          src={staticFile("sound_fx/03_digital_counter_click.wav")}
-          volume={0.5 * volume}
-        />
-      </Sequence>
-
-      {/* 33. Grand Finale Chime at Frame 1275 */}
-      <Sequence from={1275} durationInFrames={60}>
+      {/* 34. Grand Finale Chime as Golden Takeaway expands at Frame 1340 */}
+      <Sequence from={1340} durationInFrames={60}>
         <Audio
           src={staticFile("sound_fx/14_grand_finale_chime.wav")}
           volume={0.8 * volume}

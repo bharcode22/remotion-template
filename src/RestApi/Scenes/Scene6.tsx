@@ -19,12 +19,13 @@ export const Scene6: React.FC = () => {
   const { fps } = useVideoConfig();
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // ⏱️ TIMING SPRINGS & SUB-BEATS (Global Frames 1100 - 1290):
+  // ⏱️ TIMING SPRINGS & SUB-BEATS (Revisi Frame 1151 - 1380):
   // - Entrance: Frames 1098 - 1105 (Terminal lands firmly)
-  // - Beat 6A (Frames 1105 - 1152): Line 22 - "Server tetap memberikan data,"
-  // - Beat 6B (Frames 1164 - 1220): Line 23 - "tapi ini tidak bisa disebut rest API."
-  // - Beat 6C (Frames 1240 - 1280): Line 24 - "Karena tidak sesuai aturan"
-  // - Outro Freeze: Frames 1280 - 1290 (Video Climax Hold)
+  // - Line 22 (Frames 1105 - 1152): "Server tetap memberikan data,"
+  // - Revisi Clause 1 (Frames 1159 - 1213): "Namun, implementasi tersebut"
+  // - Revisi Clause 2 (Frames 1218 - 1312): "tidak mengikuti semantik HTTP method yang seharusnya"
+  // - Revisi Clause 3 (Frames 1316 - 1345): "dalam REST API."
+  // - Climax Outro Hold: Frames 1345 - 1380 (Video Conclusion)
   // ─────────────────────────────────────────────────────────────────────────────
 
   // Top Badge Spring
@@ -54,12 +55,12 @@ export const Scene6: React.FC = () => {
   const currentText1 = text1.slice(0, chars1);
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // ⌨️ TYPEWRITER LINE 2 (Line 23: "tapi ini tidak bisa disebut rest API.")
+  // ⌨️ REVISI LINE 2 (Frames 1159 - 1213: "Namun, implementasi tersebut")
   // ─────────────────────────────────────────────────────────────────────────────
-  const isLine2Active = frame >= 1160;
-  const text2 = "tapi ini tidak bisa disebut rest API.";
+  const isLine2Active = frame >= 1156;
+  const text2 = "Namun, implementasi tersebut";
   const chars2 = Math.floor(
-    interpolate(frame, [1164, 1218], [0, text2.length], {
+    interpolate(frame, [1159, 1213], [0, text2.length], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     })
@@ -67,28 +68,41 @@ export const Scene6: React.FC = () => {
   const currentText2 = text2.slice(0, chars2);
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // ⌨️ TYPEWRITER LINE 3 (Line 24: "Karena tidak sesuai aturan")
+  // ⌨️ REVISI LINE 3 (Frames 1218 - 1312: "tidak mengikuti semantik HTTP method yang seharusnya")
   // ─────────────────────────────────────────────────────────────────────────────
-  const isLine3Active = frame >= 1236;
-  const text3 = "Karena tidak sesuai aturan.";
+  const isLine3Active = frame >= 1216;
+  const text3 = "tidak mengikuti semantik HTTP method yang seharusnya";
   const chars3 = Math.floor(
-    interpolate(frame, [1240, 1278], [0, text3.length], {
+    interpolate(frame, [1218, 1310], [0, text3.length], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     })
   );
   const currentText3 = text3.slice(0, chars3);
 
-  // Stamp Impact Spring (slams down around Frame 1205)
+  // ─────────────────────────────────────────────────────────────────────────────
+  // ⌨️ REVISI LINE 4 (Frames 1316 - 1345: "dalam REST API.")
+  // ─────────────────────────────────────────────────────────────────────────────
+  const isLine4Active = frame >= 1314;
+  const text4 = "dalam REST API.";
+  const chars4 = Math.floor(
+    interpolate(frame, [1316, 1342], [0, text4.length], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    })
+  );
+  const currentText4 = text4.slice(0, chars4);
+
+  // Stamp Impact Spring (slams down at Frame 1322 as "dalam REST API" completes)
   const spStamp = spring({
-    frame: Math.max(0, frame - 1204),
+    frame: Math.max(0, frame - 1322),
     fps,
     config: { damping: 12, stiffness: 120, mass: 0.8 },
   });
 
-  // Golden Takeaway Card Spring (expands around Frame 1250)
+  // Golden Takeaway Card Spring (expands around Frame 1328)
   const spTakeaway = spring({
-    frame: Math.max(0, frame - 1248),
+    frame: Math.max(0, frame - 1326),
     fps,
     config: { damping: 14, stiffness: 90 },
   });
@@ -249,8 +263,8 @@ export const Scene6: React.FC = () => {
               fontFamily: FONT_MONO,
               display: "flex",
               flexDirection: "column",
-              gap: 22,
-              minHeight: 330,
+              gap: 20,
+              minHeight: 360,
             }}
           >
             {/* LINE 1 (Line 22: "Server tetap memberikan data,") */}
@@ -312,37 +326,62 @@ export const Scene6: React.FC = () => {
               </div>
             </div>
 
-            {/* LINE 2 (Line 23: "tapi ini tidak bisa disebut rest API.") */}
+            {/* REVISI LINE 2 (Frames 1159 - 1213: "Namun, implementasi tersebut") */}
             {isLine2Active && (
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   gap: 8,
-                  paddingTop: 10,
+                  paddingTop: 8,
                   borderTop: "1px dashed rgba(255, 255, 255, 0.1)",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div
-                    style={{
-                      padding: "3px 10px",
-                      borderRadius: 6,
-                      backgroundColor: "rgba(239, 68, 68, 0.2)",
-                      border: "1px solid rgba(239, 68, 68, 0.5)",
-                      fontSize: 13,
-                      fontWeight: 900,
-                      color: REST_COLORS.restCrimson,
-                    }}
-                  >
-                    STATUS: INVALID SPEC
-                  </div>
-                </div>
-
-                {/* Teks Baris 2: Ukuran 36px (Hero Highlight Merah Neon) */}
                 <div
                   style={{
-                    fontSize: 36,
+                    fontSize: 32,
+                    fontWeight: 850,
+                    color: REST_COLORS.restAmber,
+                    lineHeight: 1.4,
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <span style={{ color: REST_COLORS.restAmber, marginRight: 12 }}>
+                    &gt;
+                  </span>
+                  <span>{currentText2}</span>
+                  {!isLine3Active && (
+                    <span
+                      style={{
+                        display: "inline-block",
+                        width: 14,
+                        height: 32,
+                        backgroundColor: REST_COLORS.restAmber,
+                        marginLeft: 6,
+                        verticalAlign: "middle",
+                        opacity: cursorBlink ? 1 : 0,
+                      }}
+                    />
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* REVISI LINE 3 (Frames 1218 - 1312: "tidak mengikuti semantik HTTP method yang seharusnya") */}
+            {isLine3Active && (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 8,
+                  paddingTop: 8,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 34,
                     fontWeight: 950,
                     color: REST_COLORS.restCrimson,
                     lineHeight: 1.35,
@@ -355,13 +394,13 @@ export const Scene6: React.FC = () => {
                   <span style={{ color: REST_COLORS.restCrimson, marginRight: 12 }}>
                     &gt;
                   </span>
-                  <span>{currentText2}</span>
-                  {!isLine3Active && (
+                  <span>{currentText3}</span>
+                  {!isLine4Active && (
                     <span
                       style={{
                         display: "inline-block",
                         width: 14,
-                        height: 36,
+                        height: 34,
                         backgroundColor: REST_COLORS.restCrimson,
                         marginLeft: 6,
                         verticalAlign: "middle",
@@ -373,52 +412,47 @@ export const Scene6: React.FC = () => {
               </div>
             )}
 
-            {/* LINE 3 (Line 24: "Karena tidak sesuai aturan") */}
-            {isLine3Active && (
+            {/* REVISI LINE 4 (Frames 1316 - 1345: "dalam REST API.") */}
+            {isLine4Active && (
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
-                  gap: 8,
-                  paddingTop: 10,
-                  borderTop: "1px dashed rgba(255, 255, 255, 0.1)",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  fontSize: 36,
+                  fontWeight: 950,
+                  color: "#ffffff",
+                  paddingTop: 4,
                 }}
               >
-                {/* Teks Baris 3: Ukuran 34px (Amber Gold) */}
-                <div
+                <span style={{ color: REST_COLORS.restCyan, marginRight: 12 }}>
+                  &gt;
+                </span>
+                <span
                   style={{
-                    fontSize: 34,
-                    fontWeight: 900,
-                    color: REST_COLORS.restAmber,
-                    lineHeight: 1.4,
-                    filter: "drop-shadow(0 0 20px rgba(245, 158, 11, 0.45))",
-                    display: "flex",
-                    alignItems: "center",
-                    flexWrap: "wrap",
+                    color: REST_COLORS.restCyan,
+                    textShadow: "0 0 25px rgba(56, 189, 248, 0.5)",
                   }}
                 >
-                  <span style={{ color: REST_COLORS.restAmber, marginRight: 12 }}>
-                    &gt;
-                  </span>
-                  <span>{currentText3}</span>
-                  <span
-                    style={{
-                      display: "inline-block",
-                      width: 14,
-                      height: 34,
-                      backgroundColor: REST_COLORS.restAmber,
-                      marginLeft: 6,
-                      verticalAlign: "middle",
-                      opacity: cursorBlink ? 1 : 0,
-                    }}
-                  />
-                </div>
+                  {currentText4}
+                </span>
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: 14,
+                    height: 36,
+                    backgroundColor: REST_COLORS.restCyan,
+                    marginLeft: 6,
+                    verticalAlign: "middle",
+                    opacity: cursorBlink ? 1 : 0,
+                  }}
+                />
               </div>
             )}
           </div>
 
-          {/* CLIMAX NON-COMPLIANT IMPACT STAMP (Menghantam di frame 1205) */}
-          {frame >= 1204 && (
+          {/* CLIMAX NON-COMPLIANT IMPACT STAMP (Menghantam di frame 1322) */}
+          {frame >= 1322 && (
             <div
               style={{
                 position: "absolute",
@@ -428,9 +462,9 @@ export const Scene6: React.FC = () => {
                 opacity: spStamp,
                 padding: "12px 24px",
                 borderRadius: 14,
-                backgroundColor: "rgba(239, 68, 68, 0.18)",
+                backgroundColor: "rgba(239, 68, 68, 0.22)",
                 border: "3px solid #ef4444",
-                boxShadow: "0 0 35px rgba(239, 68, 68, 0.55)",
+                boxShadow: "0 0 35px rgba(239, 68, 68, 0.6)",
                 display: "flex",
                 alignItems: "center",
                 gap: 10,
@@ -451,7 +485,7 @@ export const Scene6: React.FC = () => {
           )}
         </div>
 
-        {/* 3. GOLDEN TAKEAWAY CARD (Ekspansi saat Baris 3 terketik) */}
+        {/* 3. GOLDEN TAKEAWAY CARD (Ekspansi saat kalimat selesai di Frame 1326) */}
         <div
           style={{
             transform: `scale(${spTakeaway}) translateY(${(1 - spTakeaway) * 20}px)`,

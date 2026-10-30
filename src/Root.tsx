@@ -55,7 +55,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="RestApi"
         component={RestApi}
-        durationInFrames={REST_API_FRAMES} // Exactly 43.0 seconds @ 30fps (1290 frames)
+        durationInFrames={REST_API_FRAMES} // Exactly 46.0 seconds @ 30fps (1380 frames)
         fps={30}
         width={1080}
         height={1920}
