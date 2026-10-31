@@ -12,6 +12,10 @@ import {
   RestApi,
   TOTAL_VIDEO_FRAMES as REST_API_FRAMES,
 } from "./RestApi";
+import {
+  HttpStatusCode,
+  TOTAL_VIDEO_FRAMES as HTTP_STATUS_CODE_FRAMES,
+} from "./HttpStatusCode";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -51,11 +55,26 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* 4. Proyek Baru: REST API (Naskah 3) */}
+      {/* 4. Proyek: REST API (Naskah 3) */}
       <Composition
         id="RestApi"
         component={RestApi}
         durationInFrames={REST_API_FRAMES} // Exactly 46.0 seconds @ 30fps (1380 frames)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 5. Proyek Baru: HTTP Status Code (Naskah 4) */}
+      <Composition
+        id="HttpStatusCode"
+        component={HttpStatusCode}
+        durationInFrames={HTTP_STATUS_CODE_FRAMES} // Scenes 1 - 6 (Full Video): 1620 frames (54.0s @ 30fps)
         fps={30}
         width={1080}
         height={1920}

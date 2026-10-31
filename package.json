@@ -41,6 +41,8 @@
     "render:atasan-ai:4k": "npx remotion render AtasanDikitDikitAI out/AtasanDikitDikitAI_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:rest-api": "npx remotion render RestApi out/RestApi.mp4 --pixel-format=yuv420p",
     "render:rest-api:4k": "npx remotion render RestApi out/RestApi_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:http-status-code": "npx remotion render HttpStatusCode out/HttpStatusCode.mp4 --pixel-format=yuv420p",
+    "render:http-status-code:4k": "npx remotion render HttpStatusCode out/HttpStatusCode_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
   },
