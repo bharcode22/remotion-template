@@ -20,6 +20,10 @@ import {
   StorageServer,
   TOTAL_VIDEO_FRAMES as STORAGE_SERVER_FRAMES,
 } from "./StorageServer";
+import {
+  FrontendVsBackend,
+  TOTAL_VIDEO_FRAMES as FE_VS_BE_FRAMES,
+} from "./FrontendVsBackend";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -94,6 +98,21 @@ export const RemotionRoot: React.FC = () => {
         id="StorageServer"
         component={StorageServer}
         durationInFrames={STORAGE_SERVER_FRAMES} // Scenes 1 - 6 (Full Video, Lines 1 - 22): 1680 frames (56.0s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 7. Proyek Baru: Frontend vs Backend (Naskah 6) */}
+      <Composition
+        id="FrontendVsBackend"
+        component={FrontendVsBackend}
+        durationInFrames={FE_VS_BE_FRAMES} // Full Video (Lines 1 - 20): 1260 frames (42.0s @ 30fps)
         fps={30}
         width={1080}
         height={1920}

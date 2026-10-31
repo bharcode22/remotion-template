@@ -46,6 +46,8 @@
     "render:storage-server": "npx remotion render StorageServer out/StorageServer.mp4 --pixel-format=yuv420p",
     "render:storage-server:4k": "npx remotion render StorageServer out/StorageServer_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:storege-server": "npm run render:storage-server",
+    "render:fe-vs-be": "npx remotion render FrontendVsBackend out/FrontendVsBackend.mp4 --pixel-format=yuv420p",
+    "render:fe-vs-be:4k": "npx remotion render FrontendVsBackend out/FrontendVsBackend_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
   },
