@@ -43,24 +43,24 @@ export const Scene4: React.FC = () => {
     config: { damping: 15, stiffness: 85, mass: 1 },
   });
 
-  // 4 Media Type Cards Springs (Staggered when spoken in Line 9)
+  // 4 Media Type Cards Springs (Revealing starting at Frame 530 as spoken)
   const spDokumen = spring({
-    frame: Math.max(0, frame - 535),
+    frame: Math.max(0, frame - 530),
     fps,
     config: { damping: 13, stiffness: 110 },
   });
   const spGambar = spring({
-    frame: Math.max(0, frame - 570),
+    frame: Math.max(0, frame - 565),
     fps,
     config: { damping: 13, stiffness: 110 },
   });
   const spAudio = spring({
-    frame: Math.max(0, frame - 602),
+    frame: Math.max(0, frame - 598),
     fps,
     config: { damping: 13, stiffness: 110 },
   });
   const spVideo = spring({
-    frame: Math.max(0, frame - 628),
+    frame: Math.max(0, frame - 625),
     fps,
     config: { damping: 13, stiffness: 110 },
   });
@@ -74,10 +74,9 @@ export const Scene4: React.FC = () => {
 
   // ─────────────────────────────────────────────────────────────────────────────
   // ⌨️ TYPEWRITER INTERPOLATION (Large Mobile-Friendly Monospace 34px - 36px)
-  // ─────────────────────────────────────────────────────────────────────────────
-
-  // Phrase 1 (Lines 7 - 8):
+  // Lines 7 - 8:
   // "Storage server, merupakan media penyimpanan yang digunakan untuk menyimpan berbagai jenis data,"
+  // ─────────────────────────────────────────────────────────────────────────────
   const text1 =
     "Storage server, merupakan media penyimpanan yang digunakan untuk menyimpan berbagai jenis data,";
   const chars1 = Math.floor(
@@ -87,18 +86,6 @@ export const Scene4: React.FC = () => {
     })
   );
   const currentText1 = text1.slice(0, chars1);
-
-  // Phrase 2 (Line 9):
-  // "mulai dari dokumen, gambar, audio, hingga video."
-  const isLine9Active = frame >= 525;
-  const text2 = "mulai dari dokumen, gambar, audio, hingga video.";
-  const chars2 = Math.floor(
-    interpolate(frame, [530, 645], [0, text2.length], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    })
-  );
-  const currentText2 = text2.slice(0, chars2);
 
   const cursorBlink = frame % 14 < 7;
 
@@ -294,45 +281,17 @@ export const Scene4: React.FC = () => {
                 }}
               >
                 {currentText1}
-                {!isLine9Active && (
-                  <span
-                    style={{
-                      display: "inline-block",
-                      marginLeft: 6,
-                      color: STORAGE_COLORS.accentCyan,
-                      opacity: cursorBlink ? 1 : 0,
-                    }}
-                  >
-                    █
-                  </span>
-                )}
-              </div>
-
-              {/* Line 9: "mulai dari dokumen, gambar, audio, hingga video." */}
-              {isLine9Active && (
-                <div
+                <span
                   style={{
-                    fontSize: 34,
-                    fontWeight: 800,
+                    display: "inline-block",
+                    marginLeft: 6,
                     color: STORAGE_COLORS.accentCyan,
-                    letterSpacing: -0.2,
+                    opacity: cursorBlink ? 1 : 0,
                   }}
                 >
-                  {currentText2}
-                  {chars2 < text2.length && (
-                    <span
-                      style={{
-                        display: "inline-block",
-                        marginLeft: 6,
-                        color: STORAGE_COLORS.accentCyan,
-                        opacity: cursorBlink ? 1 : 0,
-                      }}
-                    >
-                      █
-                    </span>
-                  )}
-                </div>
-              )}
+                  █
+                </span>
+              </div>
             </div>
 
             {/* 2C. 4 MEDIA TYPE CARDS (2x2 Grid) */}

@@ -1,5 +1,4 @@
 import React from "react";
-import { AbsoluteFill } from "remotion";
 import { CameraPosition } from "../types";
 
 export interface InfiniteCameraRigProps {
@@ -12,15 +11,33 @@ export const InfiniteCameraRig: React.FC<InfiniteCameraRigProps> = ({
   children,
 }) => {
   return (
-    <AbsoluteFill
+    <div
       style={{
-        overflow: "visible",
-        transform: `translate(${camera.x}px, ${camera.y}px) scale(${camera.zoom})`,
-        transformOrigin: "540px 960px",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: 1080,
+        height: 1920,
+        overflow: "hidden",
+        pointerEvents: "none",
       }}
     >
-      {children}
-    </AbsoluteFill>
+      {/* Symmetrical World Space Canvas (Upright 0deg) */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: 1080,
+          height: 1920,
+          transformOrigin: "540px 960px",
+          transform: `scale(${camera.zoom}) translate3d(${-camera.x}px, ${-camera.y}px, 0px)`,
+          willChange: "transform",
+        }}
+      >
+        {children}
+      </div>
+    </div>
   );
 };
 

@@ -12,9 +12,9 @@ export const StorageParallaxSpace: React.FC<StorageParallaxSpaceProps> = ({
   const frame = useCurrentFrame();
 
   // Multi-tier parallax offsets
-  const deepStarsOffset = cameraX * 0.08;
-  const midGridOffset = cameraX * 0.25;
-  const foregroundGlowOffset = cameraX * 0.45;
+  const deepStarsOffset = -cameraX * 0.12;
+  const midGridOffset = -cameraX * 0.25;
+  const stationGlowShift = -cameraX;
 
   const verticalDrift = (frame * 0.35) % 48;
 
@@ -80,7 +80,7 @@ export const StorageParallaxSpace: React.FC<StorageParallaxSpaceProps> = ({
         style={{
           position: "absolute",
           top: "35%",
-          left: 100 + foregroundGlowOffset,
+          left: 90 + stationGlowShift,
           width: 900,
           height: 900,
           borderRadius: "50%",
@@ -94,7 +94,7 @@ export const StorageParallaxSpace: React.FC<StorageParallaxSpaceProps> = ({
         style={{
           position: "absolute",
           top: "35%",
-          left: 1500 + foregroundGlowOffset,
+          left: -1400 + stationGlowShift + 90,
           width: 900,
           height: 900,
           borderRadius: "50%",
@@ -108,7 +108,7 @@ export const StorageParallaxSpace: React.FC<StorageParallaxSpaceProps> = ({
         style={{
           position: "absolute",
           top: "35%",
-          left: 2900 + foregroundGlowOffset,
+          left: -2800 + stationGlowShift + 90,
           width: 900,
           height: 900,
           borderRadius: "50%",
@@ -122,7 +122,7 @@ export const StorageParallaxSpace: React.FC<StorageParallaxSpaceProps> = ({
         style={{
           position: "absolute",
           top: "35%",
-          left: 4300 + foregroundGlowOffset,
+          left: -4200 + stationGlowShift + 90,
           width: 900,
           height: 900,
           borderRadius: "50%",

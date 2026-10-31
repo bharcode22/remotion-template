@@ -247,7 +247,7 @@ export const SoundEffectsManager: React.FC<SoundEffectsManagerProps> = ({
       </Sequence>
 
       {/* 24. Pop ding for Dokumen card */}
-      <Sequence from={540} durationInFrames={20}>
+      <Sequence from={530} durationInFrames={20}>
         <Audio
           src={staticFile("sound_fx/10_funny_pop_ding.wav")}
           volume={0.6 * volume}

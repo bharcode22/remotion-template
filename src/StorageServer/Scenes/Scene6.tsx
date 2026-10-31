@@ -112,10 +112,11 @@ export const Scene6: React.FC = () => {
   const cursorBlink = frame % 14 < 7;
 
   // Data packet traveling along continuous line across all 4 stations
+  // Stations: Station 1 (X=0), Station 2 (X=-1400), Station 3 (X=-2800), Station 4 (X=-4200)
   const packetX = interpolate(
     frame,
-    [800, 1650],
-    [200, -4400],
+    [800, 935, 958, 1162, 1186, 1366, 1380, 1650],
+    [0, 0, -1400, -1400, -2800, -2800, -4200, -4200],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
   );
 
@@ -130,7 +131,7 @@ export const Scene6: React.FC = () => {
     >
       {/* ═══════════════════════════════════════════════════════════════════════
           THE CONTINUOUS CONNECTING LINE ("GARIS PENGHUBUNG STORAGE")
-          Spans across all 4 stations from X: +600 to X: -4800 (Total > 5400px)
+          Spans across all 4 stations from X: +800 to X: -4600 (Total > 5400px)
       ═══════════════════════════════════════════════════════════════════════ */}
       <div
         style={{
@@ -163,7 +164,8 @@ export const Scene6: React.FC = () => {
           style={{
             position: "absolute",
             top: -14,
-            left: 5400 + (packetX - 400),
+            left: packetX - (-4600) + 540,
+            transform: "translateX(-50%)",
             padding: "4px 12px",
             borderRadius: 6,
             backgroundColor: "#ffffff",
@@ -176,6 +178,7 @@ export const Scene6: React.FC = () => {
             display: "flex",
             alignItems: "center",
             gap: 6,
+            zIndex: 12,
           }}
         >
           <span
@@ -188,6 +191,55 @@ export const Scene6: React.FC = () => {
           />
           DATA PACKET
         </div>
+
+        {/* Station Junction Markers along Line */}
+        {[
+          { x: 0, label: "01. LOCAL STORAGE", color: STORAGE_COLORS.accentEmerald },
+          { x: -1400, label: "02. OBJECT STORAGE", color: STORAGE_COLORS.accentCyan },
+          { x: -2800, label: "03. LOCAL CHARACTERISTICS", color: STORAGE_COLORS.accentEmerald },
+          { x: -4200, label: "04. OBJECT SCALABILITY", color: STORAGE_COLORS.accentPurple },
+        ].map((node) => (
+          <div
+            key={node.label}
+            style={{
+              position: "absolute",
+              top: -12,
+              left: node.x - (-4600) + 540,
+              transform: "translateX(-50%)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                width: 30,
+                height: 30,
+                borderRadius: "50%",
+                backgroundColor: "rgba(10, 15, 29, 0.95)",
+                border: `3px solid ${node.color}`,
+                boxShadow: `0 0 15px ${node.color}`,
+              }}
+            />
+            <span
+              style={{
+                marginTop: 8,
+                fontSize: 12,
+                fontWeight: 900,
+                letterSpacing: 1.5,
+                color: node.color,
+                backgroundColor: "rgba(10, 15, 29, 0.9)",
+                padding: "3px 10px",
+                borderRadius: 6,
+                border: `1px solid ${node.color}50`,
+                whiteSpace: "nowrap",
+                fontFamily: FONT_MONO,
+              }}
+            >
+              {node.label}
+            </span>
+          </div>
+        ))}
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════════
@@ -428,13 +480,13 @@ export const Scene6: React.FC = () => {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════════
-          STATION 2 (X = 1400): OBJECT STORAGE CONCEPT (Frames 958 - 1162)
+          STATION 2 (X = -1400): OBJECT STORAGE CONCEPT (Frames 958 - 1162)
           Voiceover Line 15: "Kedua, Object Storage, seperti cloud storage dari GCP, S3 dari AWS, dan masih banyak lagi."
       ═══════════════════════════════════════════════════════════════════════ */}
       <div
         style={{
           position: "absolute",
-          left: 1400,
+          left: -1400,
           top: 0,
           width: 1080,
           height: 1920,
@@ -676,13 +728,13 @@ export const Scene6: React.FC = () => {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════════
-          STATION 3 (X = 2800): LOCAL STORAGE DEEP DIVE (TYPEWRITER) (Frames 1186 - 1366)
+          STATION 3 (X = -2800): LOCAL STORAGE DEEP DIVE (TYPEWRITER) (Frames 1186 - 1366)
           Voiceover Lines 17 - 18: "Local Storage cocok untuk kebutuhan sederhana, atau penyimpanan internal server."
       ═══════════════════════════════════════════════════════════════════════ */}
       <div
         style={{
           position: "absolute",
-          left: 2800,
+          left: -2800,
           top: 0,
           width: 1080,
           height: 1920,
@@ -889,13 +941,13 @@ export const Scene6: React.FC = () => {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════════
-          STATION 4 (X = 4200): OBJECT STORAGE DEEP DIVE (TYPEWRITER) (Frames 1380 - 1680)
+          STATION 4 (X = -4200): OBJECT STORAGE DEEP DIVE (TYPEWRITER) (Frames 1380 - 1680)
           Voiceover Lines 20 - 22: "Sedangkan Object Storage, lebih cocok ketika aplikasi membutuhkan..."
       ═══════════════════════════════════════════════════════════════════════ */}
       <div
         style={{
           position: "absolute",
-          left: 4200,
+          left: -4200,
           top: 0,
           width: 1080,
           height: 1920,
