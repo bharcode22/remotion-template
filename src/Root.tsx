@@ -16,6 +16,10 @@ import {
   HttpStatusCode,
   TOTAL_VIDEO_FRAMES as HTTP_STATUS_CODE_FRAMES,
 } from "./HttpStatusCode";
+import {
+  StorageServer,
+  TOTAL_VIDEO_FRAMES as STORAGE_SERVER_FRAMES,
+} from "./StorageServer";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -70,11 +74,26 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* 5. Proyek Baru: HTTP Status Code (Naskah 4) */}
+      {/* 5. Proyek: HTTP Status Code (Naskah 4) */}
       <Composition
         id="HttpStatusCode"
         component={HttpStatusCode}
         durationInFrames={HTTP_STATUS_CODE_FRAMES} // Scenes 1 - 6 (Full Video): 1620 frames (54.0s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 6. Proyek Baru: Storage Server (Naskah 5) */}
+      <Composition
+        id="StorageServer"
+        component={StorageServer}
+        durationInFrames={STORAGE_SERVER_FRAMES} // Scenes 1 - 6 (Full Video, Lines 1 - 22): 1680 frames (56.0s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
