@@ -50,6 +50,8 @@
     "render:fe-vs-be:4k": "npx remotion render FrontendVsBackend out/FrontendVsBackend_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:programmer-ai": "npx remotion render ProgrammerAI out/ProgrammerAI.mp4 --pixel-format=yuv420p",
     "render:programmer-ai:4k": "npx remotion render ProgrammerAI out/ProgrammerAI_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:sampah-digital": "npx remotion render SampahDigital out/SampahDigital.mp4 --pixel-format=yuv420p",
+    "render:sampah-digital:4k": "npx remotion render SampahDigital out/SampahDigital_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
   },

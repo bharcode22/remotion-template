@@ -28,6 +28,10 @@ import {
   ProgrammerAI,
   TOTAL_VIDEO_FRAMES as PROGRAMMER_AI_FRAMES,
 } from "./ProgrammerAI";
+import {
+  SampahDigital,
+  TOTAL_VIDEO_FRAMES as SAMPAH_DIGITAL_FRAMES,
+} from "./SampahDigital";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -132,6 +136,21 @@ export const RemotionRoot: React.FC = () => {
         id="ProgrammerAI"
         component={ProgrammerAI}
         durationInFrames={PROGRAMMER_AI_FRAMES} // Full Video (Lines 1 - 17): 1720 frames (57.3s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 9. Proyek Baru: Sampah Digital (Naskah 8) */}
+      <Composition
+        id="SampahDigital"
+        component={SampahDigital}
+        durationInFrames={SAMPAH_DIGITAL_FRAMES} // Full Video (Lines 1 - 24): 1720 frames (57.3s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
