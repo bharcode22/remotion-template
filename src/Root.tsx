@@ -24,6 +24,10 @@ import {
   FrontendVsBackend,
   TOTAL_VIDEO_FRAMES as FE_VS_BE_FRAMES,
 } from "./FrontendVsBackend";
+import {
+  ProgrammerAI,
+  TOTAL_VIDEO_FRAMES as PROGRAMMER_AI_FRAMES,
+} from "./ProgrammerAI";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -113,6 +117,21 @@ export const RemotionRoot: React.FC = () => {
         id="FrontendVsBackend"
         component={FrontendVsBackend}
         durationInFrames={FE_VS_BE_FRAMES} // Full Video (Lines 1 - 20): 1260 frames (42.0s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 8. Proyek Baru: Programmer di Era AI (Naskah 7) */}
+      <Composition
+        id="ProgrammerAI"
+        component={ProgrammerAI}
+        durationInFrames={PROGRAMMER_AI_FRAMES} // Full Video (Lines 1 - 17): 1720 frames (57.3s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
