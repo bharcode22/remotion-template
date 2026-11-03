@@ -32,6 +32,10 @@ import {
   SampahDigital,
   TOTAL_VIDEO_FRAMES as SAMPAH_DIGITAL_FRAMES,
 } from "./SampahDigital";
+import {
+  RabbitMQDistribution,
+  TOTAL_VIDEO_FRAMES as RABBITMQ_FRAMES,
+} from "./RabbitMQDistribution";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -151,6 +155,21 @@ export const RemotionRoot: React.FC = () => {
         id="SampahDigital"
         component={SampahDigital}
         durationInFrames={SAMPAH_DIGITAL_FRAMES} // Full Video (Lines 1 - 24): 1720 frames (57.3s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 10. Proyek Baru: RabbitMQ File Distribution (Naskah 9) */}
+      <Composition
+        id="RabbitMQDistribution"
+        component={RabbitMQDistribution}
+        durationInFrames={RABBITMQ_FRAMES} // Full Video (Lines 1 - 18): 1430 frames (47.5s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
