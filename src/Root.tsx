@@ -36,6 +36,10 @@ import {
   RabbitMQDistribution,
   TOTAL_VIDEO_FRAMES as RABBITMQ_FRAMES,
 } from "./RabbitMQDistribution";
+import {
+  CiCdPipeline,
+  TOTAL_VIDEO_FRAMES as CICD_FRAMES,
+} from "./CiCdPipeline";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -170,6 +174,21 @@ export const RemotionRoot: React.FC = () => {
         id="RabbitMQDistribution"
         component={RabbitMQDistribution}
         durationInFrames={RABBITMQ_FRAMES} // Full Video (Lines 1 - 18): 1430 frames (47.5s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 11. Proyek Baru: CI/CD Pipeline (Naskah 10) */}
+      <Composition
+        id="CiCdPipeline"
+        component={CiCdPipeline}
+        durationInFrames={CICD_FRAMES} // Full Video (Lines 1 - 16): 1450 frames (48.33s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
