@@ -44,6 +44,10 @@ import {
   CiCdMultiProduct,
   TOTAL_VIDEO_FRAMES as CICD_MULTI_PRODUCT_FRAMES,
 } from "./CiCdMultiProduct";
+import {
+  ProductIntroduction,
+  TOTAL_VIDEO_FRAMES as PRODUCT_INTRO_FRAMES,
+} from "./ProductIntroduction";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -208,6 +212,21 @@ export const RemotionRoot: React.FC = () => {
         id="CiCdMultiProduct"
         component={CiCdMultiProduct}
         durationInFrames={CICD_MULTI_PRODUCT_FRAMES} // Full Video (Lines 1 - 16): 1440 frames (48.0s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 13. Proyek Baru: Product Introduction & Architecture (Naskah 12) */}
+      <Composition
+        id="ProductIntroduction"
+        component={ProductIntroduction}
+        durationInFrames={PRODUCT_INTRO_FRAMES} // Full Video: 1710 frames (57.0s @ 30fps)
         fps={30}
         width={1080}
         height={1920}

@@ -58,6 +58,8 @@
     "render:cicd:4k": "npx remotion render CiCdPipeline out/CiCdPipeline_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:cicd-multi-product": "npx remotion render CiCdMultiProduct out/CiCdMultiProduct.mp4 --pixel-format=yuv420p",
     "render:cicd-multi-product:4k": "npx remotion render CiCdMultiProduct out/CiCdMultiProduct_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:product-intro": "npx remotion render ProductIntroduction out/ProductIntroduction.mp4 --pixel-format=yuv420p",
+    "render:naskah12": "npm run render:product-intro",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
   },
