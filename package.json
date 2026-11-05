@@ -56,6 +56,8 @@
     "render:rabbitmq:4k": "npx remotion render RabbitMQDistribution out/RabbitMQDistribution_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:cicd": "npx remotion render CiCdPipeline out/CiCdPipeline.mp4 --pixel-format=yuv420p",
     "render:cicd:4k": "npx remotion render CiCdPipeline out/CiCdPipeline_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:cicd-multi-product": "npx remotion render CiCdMultiProduct out/CiCdMultiProduct.mp4 --pixel-format=yuv420p",
+    "render:cicd-multi-product:4k": "npx remotion render CiCdMultiProduct out/CiCdMultiProduct_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
   },

@@ -40,6 +40,10 @@ import {
   CiCdPipeline,
   TOTAL_VIDEO_FRAMES as CICD_FRAMES,
 } from "./CiCdPipeline";
+import {
+  CiCdMultiProduct,
+  TOTAL_VIDEO_FRAMES as CICD_MULTI_PRODUCT_FRAMES,
+} from "./CiCdMultiProduct";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -189,6 +193,21 @@ export const RemotionRoot: React.FC = () => {
         id="CiCdPipeline"
         component={CiCdPipeline}
         durationInFrames={CICD_FRAMES} // Full Video (Lines 1 - 16): 1450 frames (48.33s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 12. Proyek Baru: CI/CD Multi-Product Global Distribution (Naskah 11) */}
+      <Composition
+        id="CiCdMultiProduct"
+        component={CiCdMultiProduct}
+        durationInFrames={CICD_MULTI_PRODUCT_FRAMES} // Full Video (Lines 1 - 16): 1440 frames (48.0s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
