@@ -48,6 +48,10 @@ import {
   ProductIntroduction,
   TOTAL_VIDEO_FRAMES as PRODUCT_INTRO_FRAMES,
 } from "./ProductIntroduction";
+import {
+  PlanningAI,
+  TOTAL_VIDEO_FRAMES as PLANNING_AI_FRAMES,
+} from "./PlanningAI";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -227,6 +231,21 @@ export const RemotionRoot: React.FC = () => {
         id="ProductIntroduction"
         component={ProductIntroduction}
         durationInFrames={PRODUCT_INTRO_FRAMES} // Full Video: 1710 frames (57.0s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 14. Proyek Baru: Planning AI - Workflow & Arsitektur Developer (Naskah 13) */}
+      <Composition
+        id="PlanningAI"
+        component={PlanningAI}
+        durationInFrames={PLANNING_AI_FRAMES} // Full Video: 1600 frames (53.33s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
