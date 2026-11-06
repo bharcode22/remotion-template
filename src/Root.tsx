@@ -52,6 +52,10 @@ import {
   PlanningAI,
   TOTAL_VIDEO_FRAMES as PLANNING_AI_FRAMES,
 } from "./PlanningAI";
+import {
+  Template2,
+  TOTAL_VIDEO_FRAMES as TEMPLATE2_FRAMES,
+} from "./Template2";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -246,6 +250,21 @@ export const RemotionRoot: React.FC = () => {
         id="PlanningAI"
         component={PlanningAI}
         durationInFrames={PLANNING_AI_FRAMES} // Full Video: 1600 frames (53.33s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 15. Template 2: Glassmorphism Motion Graphics Template */}
+      <Composition
+        id="Template2"
+        component={Template2}
+        durationInFrames={TEMPLATE2_FRAMES} // Full Video: 1600 frames (53.33s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
