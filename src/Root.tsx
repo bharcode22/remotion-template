@@ -60,6 +60,10 @@ import {
   HttpVsHttps,
   TOTAL_VIDEO_FRAMES as HTTP_VS_HTTPS_FRAMES,
 } from "./HttpVsHttps";
+import {
+  RestApiIllustration,
+  TOTAL_VIDEO_FRAMES as REST_API_ILLUSTRATION_FRAMES,
+} from "./RestApiIllustration";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -289,6 +293,20 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{
           enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 19. Proyek Utama: Ilustrasi REST API Lengkap (GET, POST, dll) */}
+      <Composition
+        id="RestApiIllustration"
+        component={RestApiIllustration}
+        durationInFrames={REST_API_ILLUSTRATION_FRAMES} // Full Video: 600 frames (20.00s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
           enableSfx: true,
           sfxVolume: 1.0,
         }}
