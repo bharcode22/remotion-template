@@ -56,6 +56,10 @@ import {
   Template2,
   TOTAL_VIDEO_FRAMES as TEMPLATE2_FRAMES,
 } from "./Template2";
+import {
+  HttpVsHttps,
+  TOTAL_VIDEO_FRAMES as HTTP_VS_HTTPS_FRAMES,
+} from "./HttpVsHttps";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -265,6 +269,21 @@ export const RemotionRoot: React.FC = () => {
         id="Template2"
         component={Template2}
         durationInFrames={TEMPLATE2_FRAMES} // Full Video: 1600 frames (53.33s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableVoiceover: true,
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 16. Proyek Baru: HTTP vs HTTPS (Naskah 14) */}
+      <Composition
+        id="HttpVsHttps"
+        component={HttpVsHttps}
+        durationInFrames={HTTP_VS_HTTPS_FRAMES} // Full Video: 1375 frames (45.83s @ 30fps)
         fps={30}
         width={1080}
         height={1920}

@@ -62,6 +62,10 @@
     "render:naskah12": "npm run render:product-intro",
     "render:planning-ai": "npx remotion render PlanningAI out/PlanningAI.mp4 --pixel-format=yuv420p",
     "render:naskah13": "npm run render:planning-ai",
+    "render:http-vs-https": "npx remotion render HttpVsHttps out/HttpVsHttps.mp4 --pixel-format=yuv420p",
+    "render:http-vs-https:4k": "npx remotion render HttpVsHttps out/HttpVsHttps_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:naskah14": "npx remotion render HttpVsHttps out/HttpVsHttps.mp4 --pixel-format=yuv420p",
+    "render:naskah14:4k": "npx remotion render HttpVsHttps out/HttpVsHttps_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
   },
