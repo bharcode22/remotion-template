@@ -72,6 +72,8 @@
     "render:post-data:4k": "npx remotion render PostDataIllustration out/PostDataIllustration_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:rest-api-illustration": "npx remotion render RestApiIllustration out/RestApiIllustration.mp4 --pixel-format=yuv420p",
     "render:rest-api-illustration:4k": "npx remotion render RestApiIllustration out/RestApiIllustration_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:rabbitmq-media": "npx remotion render RabbitMQMediaIllustration out/RabbitMQMediaIllustration.mp4 --pixel-format=yuv420p",
+    "render:rabbitmq-media:4k": "npx remotion render RabbitMQMediaIllustration out/RabbitMQMediaIllustration_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:get-post": "npm run render:rest-api-illustration",
     "render:get-post:4k": "npm run render:rest-api-illustration:4k",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",

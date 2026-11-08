@@ -64,6 +64,10 @@ import {
   RestApiIllustration,
   TOTAL_VIDEO_FRAMES as REST_API_ILLUSTRATION_FRAMES,
 } from "./RestApiIllustration";
+import {
+  RabbitMQMediaIllustration,
+  TOTAL_VIDEO_FRAMES as RABBITMQ_MEDIA_FRAMES,
+} from "./RabbitMQMediaIllustration";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -303,6 +307,20 @@ export const RemotionRoot: React.FC = () => {
         id="RestApiIllustration"
         component={RestApiIllustration}
         durationInFrames={REST_API_ILLUSTRATION_FRAMES} // Full Video: 600 frames (20.00s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 20. Proyek Baru: RabbitMQ Multimedia Publish & Subscribe Distribution */}
+      <Composition
+        id="RabbitMQMediaIllustration"
+        component={RabbitMQMediaIllustration}
+        durationInFrames={RABBITMQ_MEDIA_FRAMES} // Full Video: 1043 frames (34.76s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
