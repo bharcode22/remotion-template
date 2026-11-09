@@ -76,6 +76,10 @@
     "render:rabbitmq-media:4k": "npx remotion render RabbitMQMediaIllustration out/RabbitMQMediaIllustration_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:get-post": "npm run render:rest-api-illustration",
     "render:get-post:4k": "npm run render:rest-api-illustration:4k",
+    "render:sql-vs-nosql": "npx remotion render SqlVsNoSql out/SqlVsNoSql.mp4 --pixel-format=yuv420p",
+    "render:sql-vs-nosql:4k": "npx remotion render SqlVsNoSql out/SqlVsNoSql_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:naskah15": "npm run render:sql-vs-nosql",
+    "render:naskah15:4k": "npm run render:sql-vs-nosql:4k",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
   },

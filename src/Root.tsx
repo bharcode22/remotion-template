@@ -68,6 +68,10 @@ import {
   RabbitMQMediaIllustration,
   TOTAL_VIDEO_FRAMES as RABBITMQ_MEDIA_FRAMES,
 } from "./RabbitMQMediaIllustration";
+import {
+  SqlVsNoSql,
+  TOTAL_FRAMES as SQL_VS_NOSQL_FRAMES,
+} from "./SqlVsNoSql";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -321,6 +325,20 @@ export const RemotionRoot: React.FC = () => {
         id="RabbitMQMediaIllustration"
         component={RabbitMQMediaIllustration}
         durationInFrames={RABBITMQ_MEDIA_FRAMES} // Full Video: 1043 frames (34.76s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 21. Proyek Baru: SQL vs NoSQL (Naskah 15) */}
+      <Composition
+        id="SqlVsNoSql"
+        component={SqlVsNoSql}
+        durationInFrames={SQL_VS_NOSQL_FRAMES} // 1200 frames (40.0s @ 30fps)
         fps={30}
         width={1080}
         height={1920}
