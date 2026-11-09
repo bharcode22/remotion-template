@@ -72,6 +72,10 @@ import {
   SqlVsNoSql,
   TOTAL_FRAMES as SQL_VS_NOSQL_FRAMES,
 } from "./SqlVsNoSql";
+import {
+  DatabaseConcept,
+  TOTAL_VIDEO_FRAMES as DATABASE_CONCEPT_FRAMES,
+} from "./DatabaseConcept";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -339,6 +343,20 @@ export const RemotionRoot: React.FC = () => {
         id="SqlVsNoSql"
         component={SqlVsNoSql}
         durationInFrames={SQL_VS_NOSQL_FRAMES} // 1200 frames (40.0s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 22. Proyek Baru: Database Concept (Naskah 16) */}
+      <Composition
+        id="DatabaseConcept"
+        component={DatabaseConcept}
+        durationInFrames={DATABASE_CONCEPT_FRAMES} // 1440 frames (48.0s @ 30fps)
         fps={30}
         width={1080}
         height={1920}

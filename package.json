@@ -81,7 +81,9 @@
     "render:naskah15": "npm run render:sql-vs-nosql",
     "render:naskah15:4k": "npm run render:sql-vs-nosql:4k",
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
-    "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted"
+    "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted",
+    "render:database-concept": "npx remotion render DatabaseConcept out/DatabaseConcept.mp4 --pixel-format=yuv420p",
+    "render:naskah16": "npm run render:database-concept"
   },
   "allowScripts": {
     "esbuild": false
