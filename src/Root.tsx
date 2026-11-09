@@ -76,6 +76,10 @@ import {
   DatabaseConcept,
   TOTAL_VIDEO_FRAMES as DATABASE_CONCEPT_FRAMES,
 } from "./DatabaseConcept";
+import {
+  Netlify,
+  TOTAL_NETLIFY_FRAMES,
+} from "./Netlify";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -352,11 +356,25 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* 22. Proyek Baru: Database Concept (Naskah 16) */}
+      {/* 22. Proyek: Database Concept (Naskah 16) */}
       <Composition
         id="DatabaseConcept"
         component={DatabaseConcept}
         durationInFrames={DATABASE_CONCEPT_FRAMES} // 1440 frames (48.0s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 23. Proyek Baru: Netlify (Naskah 17) */}
+      <Composition
+        id="Netlify"
+        component={Netlify}
+        durationInFrames={TOTAL_NETLIFY_FRAMES} // 1143 frames (~38.1s @ 30fps)
         fps={30}
         width={1080}
         height={1920}

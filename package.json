@@ -83,7 +83,9 @@
     "render:lyrics": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_1080p.mp4 --pixel-format=yuv420p --muted",
     "render:lyrics:4k": "npx remotion render DontTestMeLyrics out/dont_test_me_lyrics_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18 --muted",
     "render:database-concept": "npx remotion render DatabaseConcept out/DatabaseConcept.mp4 --pixel-format=yuv420p",
-    "render:naskah16": "npm run render:database-concept"
+    "render:naskah16": "npm run render:database-concept",
+    "render:netlify": "npx remotion render Netlify out/Netlify.mp4 --pixel-format=yuv420p",
+    "render:naskah17": "npm run render:netlify"
   },
   "allowScripts": {
     "esbuild": false
