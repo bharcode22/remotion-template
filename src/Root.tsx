@@ -84,6 +84,10 @@ import {
   RedirectNetlify,
   TOTAL_REDIRECT_NETLIFY_FRAMES,
 } from "./RedirectNetlify";
+import {
+  WatermarkNetlify,
+  TOTAL_WATERMARK_NETLIFY_FRAMES,
+} from "./WatermarkNetlify";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -393,6 +397,20 @@ export const RemotionRoot: React.FC = () => {
         id="RedirectNetlify"
         component={RedirectNetlify}
         durationInFrames={TOTAL_REDIRECT_NETLIFY_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 25. Proyek Baru: Watermark Netlify (Naskah 19) */}
+      <Composition
+        id="WatermarkNetlify"
+        component={WatermarkNetlify}
+        durationInFrames={TOTAL_WATERMARK_NETLIFY_FRAMES}
         fps={30}
         width={1080}
         height={1920}

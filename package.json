@@ -87,7 +87,11 @@
     "render:netlify": "npx remotion render Netlify out/Netlify.mp4 --pixel-format=yuv420p",
     "render:naskah17": "npm run render:netlify",
     "render:redirect-netlify": "npx remotion render RedirectNetlify out/RedirectNetlify.mp4 --pixel-format=yuv420p",
-    "render:naskah18": "npm run render:redirect-netlify"
+    "render:naskah18": "npm run render:redirect-netlify",
+    "render:watermark-netlify": "npx remotion render WatermarkNetlify out/WatermarkNetlify.mp4 --pixel-format=yuv420p",
+    "render:watermark-netlify:4k": "npx remotion render WatermarkNetlify out/WatermarkNetlify_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:naskah19": "npm run render:watermark-netlify",
+    "render:naskah19:4k": "npm run render:watermark-netlify:4k"
   },
   "allowScripts": {
     "esbuild": false
