@@ -80,6 +80,10 @@ import {
   Netlify,
   TOTAL_NETLIFY_FRAMES,
 } from "./Netlify";
+import {
+  RedirectNetlify,
+  TOTAL_REDIRECT_NETLIFY_FRAMES,
+} from "./RedirectNetlify";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -375,6 +379,20 @@ export const RemotionRoot: React.FC = () => {
         id="Netlify"
         component={Netlify}
         durationInFrames={TOTAL_NETLIFY_FRAMES} // 1143 frames (~38.1s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 24. Proyek Baru: Redirect Netlify (Naskah 18) */}
+      <Composition
+        id="RedirectNetlify"
+        component={RedirectNetlify}
+        durationInFrames={TOTAL_REDIRECT_NETLIFY_FRAMES}
         fps={30}
         width={1080}
         height={1920}
