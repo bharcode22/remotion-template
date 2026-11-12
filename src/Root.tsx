@@ -88,6 +88,14 @@ import {
   WatermarkNetlify,
   TOTAL_WATERMARK_NETLIFY_FRAMES,
 } from "./WatermarkNetlify";
+import {
+  GlassMographStudio,
+  TOTAL_GLASS_MOGRAPH_FRAMES,
+} from "./GlassMographStudio";
+import {
+  ElectronMographStudio,
+  TOTAL_ELECTRON_STUDIO_FRAMES,
+} from "./ElectronMographStudio";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -417,6 +425,41 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           enableSfx: true,
           sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 26. Proyek Baru: Glass Mograph Studio (Interactive 3D Card on Infinite Studio) */}
+      <Composition
+        id="GlassMographStudio"
+        component={GlassMographStudio}
+        durationInFrames={TOTAL_GLASS_MOGRAPH_FRAMES} // 180 frames (6.0s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          handle: "motionthekx",
+          name: "thekx",
+          bio: "motion graphics showcased by @thekx_",
+          primaryButtonText: "Follow",
+          primaryButtonActiveText: "Following",
+          secondaryButtonText: "Message",
+          enableSfx: true,
+          sfxVolume: 1.0,
+        }}
+      />
+
+      {/* 27. Proyek Baru: Electron Mograph Studio (Full 31s Video with Voiceover) */}
+      <Composition
+        id="ElectronMographStudio"
+        component={ElectronMographStudio}
+        durationInFrames={TOTAL_ELECTRON_STUDIO_FRAMES} // 940 frames (~31.33s @ 30fps)
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          enableSfx: true,
+          sfxVolume: 1.0,
+          voiceVolume: 1.0,
         }}
       />
     </>

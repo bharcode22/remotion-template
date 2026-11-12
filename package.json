@@ -32,8 +32,10 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "render": "npx remotion render PortfolioReels out/portfolio_reels_1080p.mp4 --pixel-format=yuv420p",
-    "render:4k": "npx remotion render PortfolioReels out/portfolio_reels_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render": "npx remotion render ElectronMographStudio out/ElectronMographStudio.mp4 --pixel-format=yuv420p",
+    "render:4k": "npx remotion render ElectronMographStudio out/ElectronMographStudio_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
+    "render:portfolio": "npx remotion render PortfolioReels out/portfolio_reels_1080p.mp4 --pixel-format=yuv420p",
+    "render:portfolio:4k": "npx remotion render PortfolioReels out/portfolio_reels_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:template": "npx remotion render Template out/Template.mp4 --pixel-format=yuv420p",
     "render:http-vs-pubsub": "npx remotion render HttpVsPubSub out/HttpVsPubSub.mp4 --pixel-format=yuv420p",
     "render:http-vs-pubsub:4k": "npx remotion render HttpVsPubSub out/HttpVsPubSub_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
@@ -91,7 +93,9 @@
     "render:watermark-netlify": "npx remotion render WatermarkNetlify out/WatermarkNetlify.mp4 --pixel-format=yuv420p",
     "render:watermark-netlify:4k": "npx remotion render WatermarkNetlify out/WatermarkNetlify_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18",
     "render:naskah19": "npm run render:watermark-netlify",
-    "render:naskah19:4k": "npm run render:watermark-netlify:4k"
+    "render:naskah19:4k": "npm run render:watermark-netlify:4k",
+    "render:electron": "npx remotion render ElectronMographStudio out/ElectronMographStudio.mp4 --pixel-format=yuv420p",
+    "render:electron:4k": "npx remotion render ElectronMographStudio out/ElectronMographStudio_4k.mp4 --scale=2 --pixel-format=yuv420p --crf=18"
   },
   "allowScripts": {
     "esbuild": false
